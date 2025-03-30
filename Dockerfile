@@ -138,8 +138,6 @@ RUN set -ex; \
 			_update_repo; \
 			apt-get build-dep -y "postgresql-$PG_MAJOR=$PG_VERSION"; \
 			apt-get source --compile "postgresql-$PG_MAJOR=$PG_VERSION"; \
-			apt-get build-dep -y "postgresql-server-dev-$PG_MAJOR=$PG_VERSION"; \
-			apt-get source --compile "postgresql--server-dev-$PG_MAJOR=$PG_VERSION"; \
 			\
 # we don't remove APT lists here because they get re-downloaded and removed later
 			\
