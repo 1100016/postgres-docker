@@ -158,6 +158,8 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends \
 		"postgresql-$PG_MAJOR=$PG_VERSION" \
 	; \
+	apt-get build-dep -y "postgresql-server-dev-$PG_MAJOR=$PG_VERSION"; \
+	apt-get source --compile "postgresql-server-dev-$PG_MAJOR=$PG_VERSION"; \
 	\
 	rm -rf /var/lib/apt/lists/*; \
 	\
