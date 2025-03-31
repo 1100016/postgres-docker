@@ -164,12 +164,6 @@ RUN set -ex; \
 	\
 	rm -rf /var/lib/apt/lists/*; \
 	\
-	apt-get install -y git make gcc; \
-	git clone --branch v0.8.0 https://github.com/pgvector/pgvector.git; \
-	cd pgvector; \
-	make; make install; \
-	cd ..; rm -fr pgvector; \
-	\
 	if [ -n "$tempDir" ]; then \
 # if we have leftovers from building, let's purge them (including extra, unnecessary build deps)
 		apt-get purge -y --auto-remove; \
