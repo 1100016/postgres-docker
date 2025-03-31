@@ -164,6 +164,7 @@ RUN set -ex; \
 	\
 	rm -rf /var/lib/apt/lists/*; \
 	\
+	apt-get install -y git make gcc; \
 	git clone --branch v0.8.0 https://github.com/pgvector/pgvector.git; \
 	cd pgvector; \
 	make; make install; \
